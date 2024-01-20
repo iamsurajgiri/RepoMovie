@@ -79,6 +79,7 @@ class MainActivity : AppCompatActivity() {
                 movies = mutableListOf()
                 binding.moviesRv.isGone = true
                 mainViewModel.currentSortType = 0
+                mainViewModel.currentPage = 1
                 mainViewModel.getTopRatedMovies()
                 true
             }
@@ -86,6 +87,7 @@ class MainActivity : AppCompatActivity() {
                 movies = mutableListOf()
                 binding.moviesRv.isGone = true
                 mainViewModel.currentSortType = 1
+                mainViewModel.currentPage = 1
                 mainViewModel.getPopularMovies()
                 true
             }
