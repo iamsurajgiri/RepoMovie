@@ -7,8 +7,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="200dp"
-
+        android:layout_width="match_parent"
         android:layout_height="300dp">
         <ImageView
             android:id="@+id/poster"
@@ -21,15 +20,22 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_height="wrap_content"/>
 
+        <View
+            android:background="@android:color/holo_red_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/title"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
         <TextView
             android:id="@+id/title"
-            android:background="@android:color/holo_red_light"
             android:textAlignment="center"
             tools:text="FAST and FURIOUS"
             android:textColor="@color/white"
             android:textStyle="bold"
             android:paddingVertical="4dp"
-            android:textSize="18sp"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"

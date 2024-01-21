@@ -62,6 +62,9 @@ class MainActivity : AppCompatActivity() {
                     adapter.moviesDiffer.submitList(movies)
                     binding.progressBar.isGone = true
                     binding.moviesRv.isVisible = true
+                    if (mainViewModel.currentPage == 1){
+                        binding.moviesRv.scrollToPosition(0)
+                    }
                 }
             }
         }
@@ -77,7 +80,6 @@ class MainActivity : AppCompatActivity() {
         return when(item.itemId){
             R.id.top ->{
                 movies = mutableListOf()
-                binding.moviesRv.isGone = true
                 mainViewModel.currentSortType = 0
                 mainViewModel.currentPage = 1
                 mainViewModel.getTopRatedMovies()
@@ -85,7 +87,6 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.popular ->{
                 movies = mutableListOf()
-                binding.moviesRv.isGone = true
                 mainViewModel.currentSortType = 1
                 mainViewModel.currentPage = 1
                 mainViewModel.getPopularMovies()
