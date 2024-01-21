@@ -32,6 +32,8 @@ class MainActivity : AppCompatActivity() {
         mainViewModel.getTopRatedMovies()
         binding.moviesRv.addOnScrollListener(object : RecyclerView.OnScrollListener(){
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                //due to time constraint, I am not using pagination library as well as triggering api call when user reaches to the end of the list
+                //In real project, I would have used pagination library and triggered api call when user was about to reach the end of the list
                 if (!recyclerView.canScrollVertically(1)) {
                     mainViewModel.currentPage += mainViewModel.currentPage
                     if (mainViewModel.currentSortType == 0){
